@@ -1,6 +1,7 @@
 <template>
   <article>
-    <img :src="`/images/${article.img}`" :alt="article.alt" />
+    <!-- {{ article }} -->
+    <nuxt-img :src="article.image" :alt="article.alt" />
     <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
     <nuxt-content :document="article" />
   </article>

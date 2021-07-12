@@ -19,11 +19,17 @@
   "dependencies": {
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/pwa": "^3.3.5",
+    "@nuxtjs/svg-sprite": "^0.5.2",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
     "prism-themes": "^1.7.0",
     "rehype-katex": "^5.0.0",
-    "remark-math": "^4.0.0"
+    "remark-math": "^4.0.0",
+    "theaterjs": "^3.2.0",
+    "typeface-inter": "^3.18.1",
+    "typeface-nova-flat": "^1.1.13",
+    "typeface-nova-round": "^1.1.13",
+    "typeface-nova-square": "^1.1.13"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",

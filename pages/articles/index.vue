@@ -2,7 +2,7 @@
   <div>
     Articles:
     <div v-for="article in articles" :key="article.slug">
-      <nuxt-link :to="`articles/${article.slug}`" class="hover:underline">{{
+      <nuxt-link :to="article.path" class="hover:underline">{{
         article.slug
       }}</nuxt-link>
     </div>

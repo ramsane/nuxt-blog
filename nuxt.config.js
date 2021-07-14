@@ -76,7 +76,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [
-      'typeface-inter',
+      'typeface-roboto',
       'typeface-nova-square',
       'typeface-nova-round',
       'typeface-nova-flat',

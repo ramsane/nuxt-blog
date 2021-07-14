@@ -3,7 +3,14 @@
     <!-- Header -->
     <div class="bg-dark lg:pb-32">
       <div
-        class="flex-row-reverse items-center mx-auto space-y-2  md:flex lg:max-w-screen-lg"
+        class="
+          flex-row-reverse
+          items-center
+          mx-auto
+          space-y-2
+          md:flex
+          lg:max-w-screen-lg
+        "
       >
         <!-- animate-fadeIn-from-Right -->
         <app-avatar
@@ -18,7 +25,7 @@
     <!-- latest articles -->
     <div class="max-w-screen-xl mx-auto bg-content lg:-mt-24 rounded-t-md">
       <!-- title with below border -->
-      <RS-title>Latest Articles</RS-title>
+      <rs-title>Latest Articles</rs-title>
       <!-- Article Card -->
       <article-list :articles="articles" :initial-delay="200" />
       <!-- all articles link -->
@@ -27,7 +34,18 @@
       <div class="my-4 text-xl text-center font-novaround">
         <nuxt-link
           to="/articles"
-          class="inline-block p-2 m-3 transition-all duration-200  text-primary-500 active:text-primary-600 rounded-t-md border-primary-500 active:bg-gray-100 active:shadow-inner"
+          class="
+            inline-block
+            p-2
+            m-3
+            transition-all
+            duration-200
+            text-primary-500
+            active:text-primary-600
+            rounded-t-md
+            border-primary-500
+            active:bg-gray-100 active:shadow-inner
+          "
         >
           see all articles
         </nuxt-link>

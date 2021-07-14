@@ -12,6 +12,6 @@
 
   /* for excerpt */
   .excerpt {
-    @apply my-4 leading-relaxed font-inter text-excerpt;
+    @apply my-4 leading-relaxed font-roboto text-excerpt;
   }
 }

@@ -37,7 +37,7 @@ module.exports = {
         novasquare: ['Nova Square'],
         novaflat: ['Nova Flat'],
         novaround: ['Nova Round'],
-        inter: 'Inter',
+        roboto: 'Roboto',
       },
       // shadow
       boxShadow: {

@@ -1,65 +1,28 @@
 <template>
   <div
-    class="
-      grid
-      justify-around
-      max-w-screen-xl
-      grid-cols-1
-      mx-auto
-      mt-2
-      duration-200
-      md:grid-cols-2
-      lg:grid-cols-3
-    "
+    class="grid justify-around max-w-screen-xl grid-cols-1 mx-auto mt-2 duration-200  md:grid-cols-2 lg:grid-cols-3"
   >
     <!-- <div v-for="i in 2" :key="i">
     </div> -->
     <div
       v-for="article in articles"
       :key="article.id"
-      class="
-        flex flex-col
-        max-w-sm
-        p-4
-        m-2
-        mx-auto
-        transition-all
-        duration-200
-        animate-fadeInFromBottom
-        bg-card
-        group
-        hover:shadow-md
-        active:shadow-xs
-      "
+      class="flex flex-col max-w-sm p-4 m-2 mx-auto transition-all duration-200  animate-fadeInFromBottom bg-card group hover:shadow-md active:shadow-xs"
     >
       <!-- category title -->
       <div class="pl-1 text-xl text-gray-500 font-novaround">
         <nuxt-link
-          class="
-            inline-block
-            transition
-            duration-200
-            border-above
-            hover:text-primary-500/100
-            focus:text-primary-500/100
-          "
-          :to="article.category"
+          class="inline-block transition duration-200  border-above hover:text-primary-500/100 focus:text-primary-500/100"
+          :to="'/categories/' + article.category"
         >
-          {{ article.category }}
+          {{ article.category.replace('-', ' ') }}
         </nuxt-link>
       </div>
 
       <!-- blog image -->
       <nuxt-link
         :to="article.path"
-        class="
-          block
-          transition-all
-          duration-200
-          shadow-xs
-          group-hover:shadow-xl
-          focus:shadow-xl
-        "
+        class="block transition-all duration-200 shadow-xs  group-hover:shadow-xl focus:shadow-xl"
       >
         <nuxt-img
           :src="article.image"
@@ -70,16 +33,7 @@
       <!-- title, date and author -->
       <nuxt-link
         :to="article.path"
-        class="
-          block
-          mt-4
-          text-2xl
-          leading-7
-          text-default
-          font-novaflat
-          hover:text-primary-500/100
-          focus:text-primary-500/100
-        "
+        class="block mt-4 text-2xl leading-7  text-default font-novaflat hover:text-primary-500/100 focus:text-primary-500/100"
       >
         {{ article.title }}
       </nuxt-link>
@@ -97,13 +51,13 @@
       <div
         class="mt-4 space-x-2 text-sm select-none font-roboto text-secondary"
       >
-        <!-- :to="tag.path" -->
         <span v-for="tag in article.tags" :key="tag">
-          <!-- <nuxt-link
-              class="inline-block px-2 hover:text-primary-500 active:text-primary-500 focus:text-primary-500"
-            > -->
-          # {{ tag }}
-          <!-- </nuxt-link> -->
+          <nuxt-link
+            :to="'/tags/' + tag"
+            class="inline-block px-2  hover:text-primary-500 active:text-primary-500 focus:text-primary-500"
+          >
+            # {{ tag.replace('-', ' ') }}
+          </nuxt-link>
         </span>
       </div>
 

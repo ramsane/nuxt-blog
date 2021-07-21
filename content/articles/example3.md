@@ -4,7 +4,7 @@ description: Cross-Entropy is something that you see over and over in machine le
 image: images/example/tf.jpg
 alt: my first blog post
 slug: cross-Entropy3 explained with entropy and kl-divergence
-tags: ['loss_fn', 'math']
+tags: ['loss-functions']
 category: misc
 author: Ramana Reddy Sane
 createdAt: 2020-06-01

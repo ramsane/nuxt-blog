@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <div class="bg-header">
-      <rs-back-button></rs-back-button>
-      <!-- heading -->
-      <rs-title>Articles</rs-title>
-    </div>
-    <article-list :articles="articles" />
+  <div class="bg-header">
+    <rs-back-button></rs-back-button>
+    <!-- heading -->
+    <rs-title>{{ $route.params.category }}</rs-title>
+    <article-list :articles="articles"></article-list>
     <client-only>
       <infinite-loading
         spinner="wavedots"
@@ -41,12 +39,6 @@
         </div>
       </infinite-loading>
     </client-only>
-    <!-- Articles:
-    <div v-for="article in articles" :key="article.slug">
-      <nuxt-link :to="article.path" class="hover:underline">{{
-        article.slug
-      }}</nuxt-link>
-    </div> -->
   </div>
 </template>
 
@@ -54,36 +46,26 @@
 import InfiniteLoading from 'vue-infinite-loading'
 
 export default {
-  name: 'Blogs',
+  name: 'Tags',
   components: {
     InfiniteLoading,
   },
   async asyncData({ $content, params }) {
-    // get the tags
-    const tagsList = await $content('tags').fetch()
-    // display the article tags
-    const tags = Object.assign(
-      {},
-      ...tagsList.map((tag) => ({ [tag.slug]: tag }))
-    )
-
     const articles = await $content('articles')
-      .without(['body'])
+      .where({ category: { $contains: params.category } })
+      .without('body')
       .sortBy('createdAt', 'asc')
       .limit(3)
       .fetch()
-
-    // articles = articles.map((article) => ({
-    //   ...article,
-    //   tags: article.tags.map((tag) => tags[tag]),
-    // }))
-
-    return { articles, tags }
+    return {
+      articles,
+    }
   },
   methods: {
     async infiniteHandler($state) {
       try {
         const articles = await this.$content('articles')
+          .where({ category: { $contains: this.$route.params.category } })
           .without(['body'])
           .sortBy('createdAt', 'asc')
           .skip(this.articles.length)

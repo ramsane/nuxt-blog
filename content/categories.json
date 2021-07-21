@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cv",
+    "title": "Computer Vision",
+    "slug": "computer-vision"
+  },
+  {
+    "id": "misc",
+    "title": "Miscellaneous",
+    "slug": "Miscellaneous"
+  },
+  {
+    "id": "ml",
+    "title": "Machine Learning",
+    "slug": "machine-learning"
+  }
+]

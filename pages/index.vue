@@ -3,14 +3,7 @@
     <!-- Header -->
     <div class="bg-dark lg:pb-32">
       <div
-        class="
-          flex-row-reverse
-          items-center
-          mx-auto
-          space-y-2
-          md:flex
-          lg:max-w-screen-lg
-        "
+        class="flex-row-reverse items-center mx-auto space-y-2  md:flex lg:max-w-screen-lg"
       >
         <!-- animate-fadeIn-from-Right -->
         <app-avatar
@@ -30,22 +23,10 @@
       <article-list :articles="articles" :initial-delay="200" />
       <!-- all articles link -->
 
-      <!-- v-if="$page.articles.totalCount > 6" -->
       <div class="my-4 text-xl text-center font-novaround">
         <nuxt-link
           to="/articles"
-          class="
-            inline-block
-            p-2
-            m-3
-            transition-all
-            duration-200
-            text-primary-500
-            active:text-primary-600
-            rounded-t-md
-            border-primary-500
-            active:bg-gray-100 active:shadow-inner
-          "
+          class="inline-block p-2 m-3 transition-all duration-200  text-primary-500 active:text-primary-600 rounded-t-md border-primary-500 active:bg-gray-100 active:shadow-inner"
         >
           see all articles
         </nuxt-link>
@@ -64,7 +45,7 @@ export default {
   async asyncData({ $content, params }) {
     const articles = await $content('articles')
       .without(['body'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .limit(3)
       .fetch()
     return {

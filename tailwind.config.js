@@ -90,7 +90,7 @@ module.exports = {
             transform: 'translateX(0rem)',
           },
         },
-        'fadeIn-from-Left': {
+        fadeInFromLeft: {
           from: {
             opacity: '0',
             transform: 'translateX(-1rem)',
@@ -115,6 +115,7 @@ module.exports = {
         fadeInFromTop: 'fadeInFromTop 500ms ease 1 normal forwards',
         fadeInFromBottom: 'fadeInFromBottom 500ms ease 1 normal forwards',
         fadeInFromRight: 'fadeInFromRight 500ms ease 1 normal forwards',
+        fadeInFromLeft: 'fadeInFromLeft 500ms ease 1 normal forwards',
         wiggle: 'wiggle 1s ease-in-out 1',
       },
     },

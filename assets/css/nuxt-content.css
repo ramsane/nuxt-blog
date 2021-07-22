@@ -1,0 +1,145 @@
+.nuxt-content {
+  /* global styles */
+  @apply text-base font-normal leading-relaxed font-roboto;
+
+  & > * {
+    @apply max-w-screen-md mx-auto;
+  }
+
+  /* images */
+  & img {
+    @apply w-full max-w-screen-lg mx-auto my-10 rounded;
+  }
+
+  /* math  */
+  & > span.katex-display {
+    @apply max-w-screen-md mx-auto;
+  }
+
+  /* inline math */
+  & span.katex {
+    @apply py-1 mx-2 rounded-md;
+  }
+  & span.frac-line {
+    border-color: unset;
+  }
+
+  & span.katex-display span.katex {
+    /* background-color: var(--card-background-color); */
+    @apply p-4 rounded-md;
+  }
+
+  /* to make sure the image is within the container */
+  @media (width <= 768px) {
+    & > img {
+      @apply w-full z-10;
+    }
+  }
+
+  & > li,
+  & li,
+  & li + li {
+    list-style: none;
+  }
+
+  & > * + *,
+  & li + li,
+  & li > p + p {
+    @apply mt-5;
+  }
+
+  /* headings */
+  & h1 {
+    @apply text-2xl mt-6 mb-2 font-medium leading-relaxed lg:text-3xl;
+  }
+  & h2 {
+    @apply text-xl mt-6 mb-2 font-medium leading-relaxed lg:text-2xl;
+  }
+  & h3 {
+    @apply text-lg mt-4 -mb-2 font-medium leading-snug lg:text-xl;
+  }
+  & h4 {
+    @apply text-base mt-4 -mb-2 font-medium leading-snug;
+  }
+
+  /* links  */
+  & strong {
+    @apply font-bold;
+  }
+  & a {
+    @apply text-primary-400 break-words;
+  }
+  & strong a {
+    @apply font-bold;
+  }
+  & a:hover {
+    @apply text-primary-600;
+  }
+
+  /* code snippets */
+  & code {
+    @apply inline px-1 overflow-x-auto font-mono text-sm;
+  }
+  & pre {
+    @apply m-auto mt-4 tracking-wide bg-gray-900 rounded-md;
+    & code {
+      @apply block overflow-visible rounded;
+    }
+  }
+
+  /* quotes */
+  & blockquote {
+    @apply pl-4 italic border-l-4 border-primary-700;
+  }
+
+  /* lists */
+  & ul,
+  & ol {
+    @apply pl-5;
+    @apply sm:pl-10;
+  }
+
+  /* *********************** Tables ******************************** */
+  & table {
+    background-color: var(--table-background-color);
+    @apply shadow;
+  }
+  & table thead {
+    background-color: var(--thead-background-color);
+    color: var(--thead-text-color);
+  }
+
+  /* no border for last row */
+  & table tr:last-child {
+    @apply border-b-0;
+  }
+
+  /* alternate color for even child */
+  & table tbody tr:nth-child(even) {
+    background-color: var(--table-row-alternate-background);
+  }
+
+  & table tbody > tr:hover {
+    background-color: var(--page-background-color);
+  }
+
+  /* table heading cells */
+  & table tr th {
+    @apply px-8 py-4 text-left border-r-0;
+  }
+
+  /* no border for last child */
+  & table tr th:last-child {
+    @apply border-r-0;
+  }
+
+  /* table data cells */
+  & table tr td {
+    @apply px-8 py-4 border-r-0;
+  }
+
+  /* no border for last child */
+  & table tr td:last-child {
+    @apply border-r-0;
+  }
+}

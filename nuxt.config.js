@@ -14,16 +14,19 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css',
+        href: 'https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css',
       },
     ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@/assets/css/main.css'],
+  css: [
+    '@/assets/css/main.css',
+    'node_modules/lite-youtube-embed/src/lite-yt-embed.css',
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/typeface.js'],
+  plugins: ['~/plugins/typeface.js', '~/plugins/youtube.client.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -63,16 +66,36 @@ export default {
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
+    liveEdit: false,
     markdown: {
       prism: {
         // theme: 'prismjs/themes/prism-twilight.css',
         theme: 'prism-themes/themes/prism-coldark-dark.css',
       },
       remarkPlugins: ['remark-math'],
-      rehypePlugins: ['rehype-katex'],
+      rehypePlugins: ['rehype-katex', '~/plugins/rehype-post-image.js'],
     },
   },
 
+  // nuxt image
+  image: {
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      '2xl': 1536,
+    },
+    presets: {
+      post: {
+        modifiers: {
+          sizes: 'xs:320px md:768px',
+        },
+      },
+    },
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [
@@ -81,5 +104,10 @@ export default {
       'typeface-nova-round',
       'typeface-nova-flat',
     ],
+  },
+  loading: {
+    color: '#FF5722',
+    height: '4px',
+    continuous: true,
   },
 }

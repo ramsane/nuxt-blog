@@ -3,14 +3,7 @@
   <div>
     <div :class="theme">
       <div
-        class="
-          relative
-          min-h-screen
-          transition-transform
-          duration-300
-          text-default
-          lg:translate-x-0
-        "
+        class="relative flex flex-col min-h-screen transition-transform duration-300  text-default lg:translate-x-0"
         :class="{
           '-translate-x-2/3 transform sm:-translate-x-1/3': menuClicked,
         }"
@@ -18,14 +11,7 @@
         <!-- header -->
         <div :class="[bgColor, textColor]">
           <header
-            class="
-              flex
-              items-center
-              justify-between
-              px-4
-              py-2
-              lg:max-w-screen-xl lg:mx-auto
-            "
+            class="flex items-center justify-between px-4 py-2  lg:max-w-screen-xl lg:mx-auto"
           >
             <!-- link to home page with logo -->
             <nuxt-link to="/" aria-label="Home">
@@ -48,13 +34,7 @@
                 v-for="category in categories"
                 :key="category.name"
                 :to="category.path"
-                class="
-                  mx-5
-                  text-xl
-                  tracking-wide
-                  hover:text-primary-500
-                  font-roboto
-                "
+                class="mx-5 text-xl tracking-wide  hover:text-primary-500 font-roboto"
                 exact-active-class="text-primary-500"
               >
                 {{ category.name }}
@@ -62,14 +42,7 @@
             </nav>
             <!-- hamberger menu -->
             <svg
-              class="
-                w-12
-                h-10
-                text-gray-500
-                cursor-pointer
-                stroke-current stroke-2
-                lg:hidden
-              "
+              class="w-12 h-10 text-gray-500 cursor-pointer stroke-current stroke-2  lg:hidden"
               xmlns="http://www.w3.org/2000/svg"
               @click="menuClicked = !menuClicked"
             >
@@ -77,24 +50,16 @@
             </svg>
           </header>
         </div>
+
         <!-- content -->
-        <div class="pb-48 bg-page">
+        <div class="flex-1 bg-page">
           <Nuxt />
         </div>
+
         <!-- footer -->
-        <div class="absolute bottom-0 w-full bg-card text-default">
+        <div class="w-full bg-card text-default">
           <div
-            class="
-              flex flex-col
-              items-center
-              justify-between
-              max-w-screen-lg
-              px-4
-              py-8
-              mx-auto
-              space-y-6
-              md:flex-row md:space-y-0
-            "
+            class="flex flex-col items-center justify-between max-w-screen-lg px-4 py-8 mx-auto space-y-6  md:flex-row md:space-y-0"
           >
             <!-- copy rights -->
             <div>
@@ -143,14 +108,7 @@
               >
                 <svg-icon
                   name="mail"
-                  class="
-                    w-6
-                    h-6
-                    text-red-100
-                    fill-current
-                    stroke-3
-                    hover:text-red-50
-                  "
+                  class="w-6 h-6 text-red-100 fill-current  stroke-3 hover:text-red-50"
                 />
               </a>
             </div>
@@ -159,19 +117,7 @@
       </div>
       <!-- side nav -->
       <nav
-        class="
-          fixed
-          top-0
-          right-0
-          w-2/3
-          h-full
-          text-xl text-gray-500
-          transition-transform
-          duration-300
-          transform
-          sm:w-1/3
-          lg:translate-x-full
-        "
+        class="fixed top-0 right-0 w-2/3 h-full text-xl text-gray-500 transition-transform duration-300 transform  sm:w-1/3 lg:translate-x-full"
         :class="[{ 'translate-x-full': !menuClicked }, bgColor]"
       >
         <rs-theme-switcher
@@ -186,14 +132,7 @@
         >
           <nuxt-link
             :to="category.path"
-            class="
-              block
-              w-3/4
-              mx-auto
-              tracking-wide
-              hover:text-primary-500
-              font-roboto
-            "
+            class="block w-3/4 mx-auto tracking-wide  hover:text-primary-500 font-roboto"
             active-class="text-primary-500"
           >
             {{ category.name }}

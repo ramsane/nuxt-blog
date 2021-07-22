@@ -69,7 +69,7 @@ export default {
 
     const articles = await $content('articles')
       .without(['body'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .limit(3)
       .fetch()
 
@@ -85,7 +85,7 @@ export default {
       try {
         const articles = await this.$content('articles')
           .without(['body'])
-          .sortBy('createdAt', 'asc')
+          .sortBy('createdAt', 'desc')
           .skip(this.articles.length)
           .limit(3)
           .fetch()

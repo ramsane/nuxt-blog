@@ -2,7 +2,12 @@
   <div class="bg-header">
     <rs-back-button></rs-back-button>
     <!-- heading -->
-    <rs-title>{{ $route.params.category }}</rs-title>
+    <rs-title>{{
+      $route.params.category
+        .split('-')
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ')
+    }}</rs-title>
     <article-list :articles="articles"></article-list>
     <client-only>
       <infinite-loading
@@ -54,7 +59,7 @@ export default {
     const articles = await $content('articles')
       .where({ category: { $contains: params.category } })
       .without('body')
-      .sortBy('createdAt', 'asc')
+      .sortBy('createdAt', 'desc')
       .limit(3)
       .fetch()
     return {
@@ -67,7 +72,7 @@ export default {
         const articles = await this.$content('articles')
           .where({ category: { $contains: this.$route.params.category } })
           .without(['body'])
-          .sortBy('createdAt', 'asc')
+          .sortBy('createdAt', 'desc')
           .skip(this.articles.length)
           .limit(3)
           .fetch()

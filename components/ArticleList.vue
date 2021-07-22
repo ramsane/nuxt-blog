@@ -13,9 +13,14 @@
       <div class="pl-1 text-xl text-gray-500 font-novaround">
         <nuxt-link
           class="inline-block transition duration-200  border-above hover:text-primary-500/100 focus:text-primary-500/100"
-          :to="'/categories/' + article.category"
+          :to="'/categories/' + article.category.toLowerCase()"
         >
-          {{ article.category.replace('-', ' ') }}
+          {{
+            article.category
+              .split('-')
+              .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+              .join(' ')
+          }}
         </nuxt-link>
       </div>
 
@@ -25,6 +30,7 @@
         class="block transition-all duration-200 shadow-xs  group-hover:shadow-xl focus:shadow-xl"
       >
         <nuxt-img
+          sizes="xs:320px"
           :src="article.image"
           class="object-cover w-full h-full mt-2 rounded-t-md"
         />
@@ -45,7 +51,9 @@
       </div>
 
       <!-- excerpt -->
-      <div class="flex-1 text-sm excerpt">{{ article.description }}</div>
+      <div class="flex-1 my-4 text-sm leading-relaxed font-roboto text-excerpt">
+        {{ article.description }}
+      </div>
 
       <!-- tags -->
       <div
@@ -56,7 +64,7 @@
             :to="'/tags/' + tag"
             class="inline-block px-2  hover:text-primary-500 active:text-primary-500 focus:text-primary-500"
           >
-            # {{ tag.replace('-', ' ') }}
+            # {{ tag.replace(/-/g, ' ') }}
           </nuxt-link>
         </span>
       </div>
@@ -85,7 +93,16 @@ export default {
       default: 100,
     },
   },
+
   methods: {
+    // category(category) {
+    //   // const category = this.$route.params.category.replace(/-/g, ' ')
+    //   // console.log(category)
+    //   return category
+    //     .split('-')
+    //     .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+    //     .join(' ')
+    // },
     animationDelay(index) {
       // delay should start from
       return `${this.initialDelay + (index % this.perPage) * this.baseDelay}ms`

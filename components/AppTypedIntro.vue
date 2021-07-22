@@ -36,7 +36,7 @@ export default {
       )
       .addScene(1000, -40)
       .addScene(
-        'a decent <span class="text-[#0C4B33]">Software Developer.</span>'
+        'a decent <span class="text-[#41B883]">Software Developer.</span>'
       )
       .addScene(1000, -19)
       .addScene('<span class="text-[#41B883]">Front-end developer</span>')

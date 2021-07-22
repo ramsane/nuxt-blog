@@ -6,11 +6,11 @@
 }
 
 *::-webkit-scrollbar {
-  @apply w-1.5 h-1.5 border-none;
+  @apply sm:w-2 sm:h-2 sm:border-none;
 }
 
 *::-webkit-scrollbar-thumb {
-  @apply bg-gray-500 rounded-sm;
+  @apply sm:bg-gray-500 rounded-sm;
 }
 
 *:focus {

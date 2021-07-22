@@ -9,9 +9,4 @@
     content: '';
     @apply block max-w-[10rem] w-0 animate-expand mx-auto my-2 bg-primary-500;
   }
-
-  /* for excerpt */
-  .excerpt {
-    @apply my-4 leading-relaxed font-roboto text-excerpt;
-  }
 }

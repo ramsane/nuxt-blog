@@ -1,7 +1,7 @@
 ---
 title: "Cross Entropy : An intuitive explanation with Entropy and  KL-Divergence" 
 description: Cross-Entropy is something that you see over and over in machine learning and deep learning. This article explains it from Information theory prespective and try to connect the dots. KL-Divergence is also very important and is used in Decision Trees and generative models like Variational Auto Encoders.
-image: articles/cross-entropy/cross-entropy-banner.png
+image: /articles/cross-entropy/cross-entropy-banner.png
 slug: cross-Entropy explained with entropy and kl-divergence
 tags: ['loss-functions', 'mathematics']
 category: miscellaneous

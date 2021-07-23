@@ -8,7 +8,7 @@
 
   /* images */
   & img {
-    @apply mx-auto my-10 rounded;
+    @apply max-w-full mx-auto my-10 rounded;
   }
 
   /* math  */

@@ -164,9 +164,7 @@ It may be little confusing at first, but it actually tells you how un certain ou
 Below graph is for the Entropy when we have two events. Here the equation of Entropy is calculated as $y=-x\log(x) - (1-x)\log(1-x)$ because the probabilities sums to 1 when there are two events.
 
 
-<!-- ![Entropy for two classes](/articles/example/svm.png) -->
-
-![Entropy for two classes](/articles/cross-entropy/entropy.png)
+<nuxt-img preset="post" src="/articles/cross-entropy/entropy.png" alt="Entropy for two classes"></nuxt-img>
 
 As we have only two events, if the probability of one event is high $x \uparrow$ then the other event's probability would be low $(1 - x)\downarrow$.
 
@@ -201,7 +199,7 @@ With this, you should be comfortable with Entropy being <strong>measure of uncer
 
 It is nothing but the average amount of information(in bits) in a transmission. Consider the following example where we encode all the events as 3 bits and assuming all the events are equally likely. In this case, Cross Entropy is 3 bits.
 
-![Cross Entropy - Weather with 8 states - 1](/articles/cross-entropy/cross-entropy-weather-1.png)
+<nuxt-img preset="post" src="/articles/cross-entropy/cross-entropy-weather-1.png" alt="Cross Entropy - Weather with 8 states - 1"></nuxt-img>
 
 When we are encoding any information in bits, we are implicitly assuming it's probabilities. If we go back to the section where we were calculating the Information when an message is received based on it's corresponding event probability, we can see that if we are transferring 3 bits for an event, that means the probability of the event that we assumed is $\frac1{2^3}$ .
 
@@ -225,7 +223,7 @@ where, $p$ is the true distribution and $q$ is the predicted distribution.  It i
 
 But this is not the case always. Consider the true distribution for those states are not equally likely as follows with the same encoding.
 
-![Cross Entropy - Weather with 8 states - 1](/articles/cross-entropy/cross-entropy-weather-2.png)
+<nuxt-img preset="post" src="/articles/cross-entropy/cross-entropy-weather-2.png" alt="Cross Entropy - Weather with 8 states - 1"></nuxt-img>
 
 Here, predicted distribution is same ($\frac18$) for all the states as we are using same number of bits for all the states. But the true distribution is different. So, entropy and cross entropy would be different.
 
@@ -247,13 +245,13 @@ $$
 
 On an average, we are sending 3 bits of information but only 2.23 bits of information is useful. One more thing that is important to note is that  *cross entropy is always greater than the entropy*. You might ask for proof. But if you think intuitively, when we use more number of bits for the events that are more probable, it will cost us few extra bits, It will be more clear with the following examples.
 
-![Cross Entropy - Weather with 8 states - 2](/articles/cross-entropy/cross-entropy-weather-3.png)
+<nuxt-img preset="post" src="/articles/cross-entropy/cross-entropy-weather-3.png" alt="Cross Entropy - Weather with 8 states - 2"></nuxt-img>
 
 With this encoding, our cross entropy would be $H(p,q)=2.42 \text{ bits}$ which is close to $2.32 \text{ bits}$ (entropy). As you have observed, we are still sending additional 0.1 bits of information with this encoding. But it is better than the previous one.
 
 But if we reverse the encoding. i.e., choose more number of bits for more probable events, would result in high cross entropy. For example, take the following encoding.
 
-![Cross Entropy - Weather with 8 states - 2](/articles/cross-entropy/cross-entropy-weather-4.png)
+<nuxt-img preset="post" src="/articles/cross-entropy/cross-entropy-weather-4.png" alt="Cross Entropy - Weather with 8 states - 2"></nuxt-img>
 
 Here, the average message length or cross-entropy is$4.58$bits, which is almost twice as the entropy($2.23$bits). This is because of the encoding. Here also, we can see that the cross entropy is greater than the entropy by some amount($2.35$bits ).
 

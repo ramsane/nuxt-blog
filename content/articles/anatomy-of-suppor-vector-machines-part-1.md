@@ -13,11 +13,11 @@ Unlike logistic regression, which tries to find a plane(can be more than one pla
 
 Let's take two set of points that are fully separated with the possible planes that that can separate those two set of points. All the planes (lines) can separate those two set of points. But the thicker plane(line) seems to be the better choice, as it is exactly at the center of the two clusters ( set of points ).
 
-![lr-vs-svm](/articles/svm/part1/lr-vs-svm.png)
+<nuxt-img preset="post" src="/articles/svm/part1/lr-vs-svm.png" alt="lr-vs-svm"></nuxt-img>
 
 For that we will consider two planes that are parallel to the required plane, one on each side so that the required plane will be exactly at the center of those two planes. The green one passes through through one green point and the other one(orange plane) passes through two orange points.  These two planes are in such a way these acts as a decision boundary for that particular class.
 
-![svm with margin](/articles/svm/part1/svm_with_margin.png)
+<nuxt-img preset="post" src="/articles/svm/part1/svm_with_margin.png" alt="svm with margin"></nuxt-img>
 
 - All the points on and below the green plane are considered as green class.
 - And all the points on and above the orange plane are considered as orange class.
@@ -256,7 +256,7 @@ The main things that we have to focus on here are **decision function** and **ma
 
 And we also assumed that for all the nearest points, the decision function is either $-1$ or $1$ (depends on the class). So, we just draw those contour lines. As expected, the support vectors would be on those contour lines.
 
-![linear_SVM](/articles/svm/part1/sklearn_svm.png)
+<nuxt-img preset="post" src="/articles/svm/part1/sklearn_svm.png" alt="linear_SVM"></nuxt-img>
 
 The  main thing that we have to take from the plot are follows.
 

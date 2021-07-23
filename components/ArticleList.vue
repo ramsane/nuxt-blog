@@ -30,7 +30,7 @@
         class="block transition-all duration-200 shadow-xs  group-hover:shadow-xl focus:shadow-xl"
       >
         <nuxt-img
-          sizes="xs:320px"
+          preset="post"
           :src="article.image"
           class="object-cover w-full h-full mt-2 rounded-t-md"
         />

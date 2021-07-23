@@ -1,17 +1,62 @@
+import getRoutes from './utils/getRoutes'
+
+// get the default meta tag.
+import getSiteMeta from './utils/getSiteMeta'
+const meta = getSiteMeta()
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-blog',
+    htmlAttrs: {
+      lang: 'en-GB',
+    },
+    title: 'Ramana Reddy Sane | Portfolio',
     meta: [
+      ...meta,
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'A simple portfolio that has few blogs that explains the concepts and ideas from various fields like MachineLearning, Deeplearning, Software Development, Frontend.',
+      },
+      { property: 'og:image:width', content: '740' },
+      { property: 'og:image:height', content: '300' },
+      { name: 'twitter:site', content: '@ramansane' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'msapplication-TileColor', content: '#3a3a3a' },
+      { name: 'theme-color', content: '#3a3a3a' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#3a3a3a' },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/apple-touch-icon.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/favicon-32x32.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/favicon-16x16.png',
+      },
+      { rel: 'manifest', href: '/site.webmanifest' },
+      {
+        hid: 'canonical',
+        rel: 'canonical',
+        href: process.env.BASE_URL || 'https://ramsane.github.io',
+      },
       {
         rel: 'stylesheet',
         href: 'https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css',
@@ -55,6 +100,8 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // https://sitemap.nuxtjs.org/
+    '@nuxtjs/sitemap',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -73,7 +120,7 @@ export default {
         theme: 'prism-themes/themes/prism-coldark-dark.css',
       },
       remarkPlugins: ['remark-math'],
-      rehypePlugins: ['rehype-katex', '~/plugins/rehype-post-image.js'],
+      rehypePlugins: ['rehype-katex'],
     },
   },
 
@@ -105,6 +152,14 @@ export default {
       'typeface-nova-flat',
     ],
   },
+
+  sitemap: {
+    hostname: process.env.BASE_URL || 'https://ramsane.github.io',
+    routes() {
+      return getRoutes()
+    },
+  },
+
   loading: {
     color: '#FF5722',
     height: '4px',

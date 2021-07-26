@@ -1,18 +1,18 @@
 <template>
   <div
-    class="grid justify-around max-w-screen-xl grid-cols-1 mx-auto mt-2 duration-200  md:grid-cols-2 lg:grid-cols-3"
+    class="grid justify-around max-w-screen-xl grid-cols-1 mx-auto mt-2 duration-200 md:grid-cols-2 lg:grid-cols-3"
   >
     <!-- <div v-for="i in 2" :key="i">
     </div> -->
     <div
       v-for="article in articles"
       :key="article.id"
-      class="flex flex-col max-w-sm p-4 m-2 mx-auto transition-all duration-200  animate-fadeInFromBottom bg-card group hover:shadow-md active:shadow-xs"
+      class="flex flex-col max-w-sm p-4 m-2 mx-auto transition-all duration-200 animate-fadeInFromBottom bg-card group hover:shadow-md active:shadow-xs"
     >
       <!-- category title -->
       <div class="pl-1 text-xl text-gray-500 font-novaround">
         <nuxt-link
-          class="inline-block transition duration-200  border-above hover:text-primary-500/100 focus:text-primary-500/100"
+          class="inline-block transition duration-200 border-above hover:text-primary-500/100 focus:text-primary-500/100"
           :to="'/categories/' + article.category.toLowerCase()"
         >
           {{
@@ -27,7 +27,7 @@
       <!-- blog image -->
       <nuxt-link
         :to="article.path"
-        class="block transition-all duration-200 shadow-xs  group-hover:shadow-xl focus:shadow-xl"
+        class="block transition-all duration-200 shadow-xs group-hover:shadow-xl focus:shadow-xl"
       >
         <nuxt-img
           preset="post"
@@ -39,7 +39,7 @@
       <!-- title, date and author -->
       <nuxt-link
         :to="article.path"
-        class="block mt-4 text-2xl leading-7  text-default font-novaflat hover:text-primary-500/100 focus:text-primary-500/100"
+        class="block mt-4 text-2xl leading-7 text-default font-novaflat hover:text-primary-500/100 focus:text-primary-500/100"
       >
         {{ article.title }}
       </nuxt-link>
@@ -62,7 +62,7 @@
         <span v-for="tag in article.tags" :key="tag">
           <nuxt-link
             :to="'/tags/' + tag"
-            class="inline-block px-2  hover:text-primary-500 active:text-primary-500 focus:text-primary-500"
+            class="inline-block px-2 hover:text-primary-500 active:text-primary-500 focus:text-primary-500"
           >
             # {{ tag.replace(/-/g, ' ') }}
           </nuxt-link>
@@ -95,24 +95,13 @@ export default {
   },
 
   methods: {
-    // category(category) {
-    //   // const category = this.$route.params.category.replace(/-/g, ' ')
-    //   // console.log(category)
-    //   return category
-    //     .split('-')
-    //     .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-    //     .join(' ')
-    // },
     animationDelay(index) {
       // delay should start from
       return `${this.initialDelay + (index % this.perPage) * this.baseDelay}ms`
       // return "100ms";
     },
     formatDate(date) {
-      // const options = { year: 'numeric', month: 'short', day: 'numeric' }
-      // const D = new Date(date).toLocaleDateString('en', options)
       const D = new Date(date).toString().split(' ')
-      // return D
       return D[2] + ' ' + D[1] + ' ' + D[3]
     },
   },

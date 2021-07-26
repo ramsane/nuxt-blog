@@ -8,6 +8,10 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  // router: {
+  //   trailingSlash: true
+  // },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     htmlAttrs: {
@@ -72,7 +76,11 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/typeface.js', '~/plugins/youtube.client.js'],
+  plugins: [
+    '~/plugins/theme.client.js',
+    '~/plugins/typeface.js',
+    '~/plugins/youtube.client.js',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -89,7 +97,14 @@ export default {
     ['@nuxt/image'],
     // https://github.com/nuxt-community/svg-sprite-module
     '@nuxtjs/svg-sprite',
+    // https://nuxtjs.org/blog/going-dark-with-nuxtjs-color-mode#install-the-color-mode-module
+    '@nuxtjs/color-mode',
   ],
+
+  // remove -mode suffix for Tailwind Dark mode support
+  colorMode: {
+    classSuffix: ""
+  },
 
   svgSprite: {
     input: '~/assets/svg/',

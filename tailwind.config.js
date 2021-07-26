@@ -71,34 +71,16 @@ module.exports = {
           },
         },
         fadeInFromBottom: {
-          from: {
-            opacity: '0',
-            transform: 'translateY(1rem)',
-          },
-          to: {
-            opacity: '1',
-            transform: 'translateY(0px)',
-          },
+          '0%':  {opacity: '0', transform: 'translateY(1rem)'},
+          '100%': {opacity: '1', transform: 'translateY(0px)'}
         },
         fadeInFromRight: {
-          from: {
-            opacity: '0',
-            transform: 'translateX(1rem)',
-          },
-          to: {
-            opacity: '1',
-            transform: 'translateX(0rem)',
-          },
+          '0%': { opacity:0, transform: 'translateX(1rem)'},
+          '100%': { opacity: '1', transform: 'translateX(0rem)'},
         },
         fadeInFromLeft: {
-          from: {
-            opacity: '0',
-            transform: 'translateX(-1rem)',
-          },
-          to: {
-            opacity: '1',
-            transform: 'translateX(0rem)',
-          },
+          '0%': { opacity:0, transform: 'translateX(-1rem)'},          '30%': { opacity: 0 },
+          '100%': { opacity: '1', transform: 'translateX(0rem)'},
         },
         expand: {
           from: {
@@ -120,4 +102,9 @@ module.exports = {
       },
     },
   },
+  darkMode: 'class',
+  colorMode: {
+    // remove -mode suffix for Tailwind Dark mode support
+    classSuffix: ""
+  }
 }

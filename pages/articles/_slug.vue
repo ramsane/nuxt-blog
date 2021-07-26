@@ -1,19 +1,20 @@
 <template>
-  <article class="text-default bg-content">
+<!-- bg-content -->
+  <article class="font-roboto bg-content">
     <client-only>
       <read-progress class="sticky top-0 left-0 z-[9999] w-full h-1" />
     </client-only>
     <!-- back -->
     <rs-back-button class="sticky top-0 z-10"></rs-back-button>
     <!-- title, excerpt and image -->
-    <div class="max-w-screen-xl p-4 mx-auto font-roboto">
+    <div class="max-w-screen-xl p-4 mx-auto">
       <div class="items-center lg:flex lg:space-x-4">
         <!-- text  -->
         <div
-          class="max-w-screen-md mx-auto  lg:max-w-md lg:mr-4 animate-fadeInFromBottom lg:animate-fadeInFromLeft"
+          class="max-w-screen-md mx-auto lg:max-w-md lg:mr-4 animate-fadeInFromBottom lg:animate-fadeInFromLeft"
         >
           <!-- date - category -->
-          <div class="text-sm font-medium font-roboto text-secondary">
+          <div class="text-sm font-medium text-secondary">
             <span>{{ formatDate(article.createdAt) }}</span>
             <span class="inline-block px-2">—</span>
             <nuxt-link
@@ -30,12 +31,12 @@
           </div>
           <!-- title -->
           <div
-            class="text-3xl leading-tight opacity-0  font-novaflat lg:text-4xl animate-fadeIn"
+            class="text-3xl leading-tight font-novaflat lg:text-4xl"
           >
             {{ article.title }}
           </div>
           <!-- excerpt -->
-          <div class="my-4 text-sm font-roboto text-excerpt lg:text-base">
+          <div class="my-4 text-sm text-excerpt lg:text-base">
             {{ article.description }}
           </div>
         </div>
@@ -46,7 +47,7 @@
             :src="article.image"
             :alt="article.title"
             preset="post"
-            class="object-cover w-full h-full rounded-md shadow-xl  animate-fadeInFromBottom lg:animate-fadeInFromRight"
+            class="object-cover w-full h-full rounded-md shadow-xl animate-fadeInFromBottom lg:animate-fadeInFromRight"
           />
         </div>
       </div>
@@ -54,7 +55,7 @@
 
     <!-- content and tags -->
     <div
-      class="max-w-screen-xl p-4 pt-8 mx-auto  animate-fadeInFromBottom lg:animate-fadeInFromTop"
+      class="max-w-screen-xl p-4 pt-8 mx-auto animate-fadeInFromBottom lg:animate-fadeInFromTop"
     >
       <nuxt-content :document="article" />
       <!-- tags -->
@@ -62,7 +63,7 @@
         <span v-for="tag in article.tags" :key="tag">
           <nuxt-link
             :to="'/tags/' + tag"
-            class="inline-block px-2  text-primary-500 hover:text-primary-600 active:text-primary-500 focus:text-primary-500"
+            class="inline-block px-2 text-primary-500 hover:text-primary-600 active:text-primary-500 focus:text-primary-500"
           >
             # {{ tag.replace(/-/g, ' ') }}
           </nuxt-link>

@@ -1,13 +1,15 @@
 <template>
-  <div class="bg-header">
-    <rs-back-button></rs-back-button>
-    <!-- heading -->
-    <rs-title>{{
-      $route.params.tag
-        .split('-')
-        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-        .join(' ')
-    }}</rs-title>
+  <div>
+    <div class="bg-content">
+      <rs-back-button></rs-back-button>
+      <!-- heading -->
+      <rs-title>{{
+        $route.params.tag
+          .split('-')
+          .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+          .join(' ')
+      }}</rs-title>
+    </div>
     <article-list :articles="articles"></article-list>
     <client-only>
       <infinite-loading

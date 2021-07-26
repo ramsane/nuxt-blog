@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-header">
+    <div class="bg-content">
       <rs-back-button></rs-back-button>
       <!-- heading -->
       <rs-title>Articles</rs-title>

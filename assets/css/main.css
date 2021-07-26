@@ -1,5 +1,4 @@
 /* scroll bar - firefox browsers */
-
 * {
   scrollbar-width: thin;
   scrollbar-color: theme('colors.gray.700') var(--dark-background-color);
@@ -41,15 +40,13 @@
   @apply text-white bg-opacity-75 bg-primary-500;
 }
 
+/* --dark-background-color: #12161d; */
+
 /* styles for themes */
 :root {
-  --dark-background-color: #12161d;
-}
-
-.theme-light {
   /* background colors */
+  --dark-background-color: #12161d;
   --page-background-color: #f7fafc;
-  --header-background-color: #fff;
   --content-background-color: #fff;
   --card-background-color: #fff;
 
@@ -62,22 +59,21 @@
   --table-background-color: #fff;
   --thead-background-color: #323544;
   --thead-text-color: #dadada;
-  --table-row-alternate-background: #ededed;
+  --table-row-alternate-background: #ededed;  
 }
 
-.theme-dark {
+.dark {
   /* background colors */
   --page-background-color: #12161d;
-  --header-background-color: #12161d;
   --content-background-color: #12161d;
-  --card-background-color: #20252f; /* #CFD8DC for text color */
+  --card-background-color: #20252f;
 
   /* text colors */
   --default-text-color: #b8b8c7;
   --secondary-text-color: #8aa2c3; /*  for subtitles like date and tags  */
   --excerpt-text-color: #c1c1e0;
 
-  /* table colors */
+  /* table colors */    
   --table-background-color: #1d222c;
   --thead-background-color: #0e1116;
   --thead-text-color: #b8b8c7;
@@ -85,7 +81,11 @@
 }
 
 body {
-  background-color: var(--dark-background-color);
+  font-family:  Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--page);
+  color: var(--default-text-color);
+  transition: background-color 0.3s;
 }
 
 .border-above::before {
